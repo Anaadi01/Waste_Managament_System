@@ -1,0 +1,24 @@
+@media (min-width: 800px) {
+  .form-control {
+    /* display: flex; */
+    align-items: center;
+    width: 25rem;
+  }
+  .col {
+    /* display: flex; */
+    align-items:center;
+    
+  }
+  
+
+}
+@media (max-width: 800px) {
+  .col {
+    /* display: flex; */
+    align-items:normal; 
+  }
+  .login_signup{
+    flex-direction: row;
+    justify-content: space-between;
+  }
+}
