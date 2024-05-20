@@ -16,6 +16,7 @@ const navigate = useNavigate()
             password
             })
             console.log(apiCall)
+            localStorage.setItem('userId', apiCall.data.data._id)
         Swal.fire({
             title: 'Welcome ' + apiCall.data.data.firstName+' '+apiCall.data.data.lastName,
             icon:'success',

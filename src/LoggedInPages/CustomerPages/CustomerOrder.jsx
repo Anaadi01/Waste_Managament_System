@@ -2,11 +2,13 @@ import React, { useState } from 'react';
 import useFetchAllCategories from '../../CommonFunction/useFetchAllCategories';
 import Swal from 'sweetalert2';
 import { callApi } from '../../Axios';
+import { currentDate } from '../../CommonFunction/common';
 
 export default function CustomerOrder() {
   const categories = useFetchAllCategories();
-
+  const userId = localStorage.getItem('userId')
   const [orderData, setOrderData] = useState({
+    userId:userId,
     orderDate: '',
     category: '',
     weight: '',
@@ -42,6 +44,7 @@ export default function CustomerOrder() {
     }
   };
 
+
   return (
     <div className="container mt-4 col">
       <form onSubmit={handleSubmit}>
@@ -52,6 +55,7 @@ export default function CustomerOrder() {
             className="form-control"
             id="orderDate"
             name="orderDate"
+             min={currentDate}
             value={orderData.orderDate}
             onChange={handleChange}
             required

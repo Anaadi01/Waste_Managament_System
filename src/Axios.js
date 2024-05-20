@@ -1,6 +1,7 @@
 import axios from 'axios';
 import Swal from 'sweetalert2';
 
+// const apiBaseUrl = 'https://silly-blue-jodhpurs.cyclic.app/api';
 const apiBaseUrl = 'http://localhost:3000/api';
 
 export const callApi = async (endpoint, method = 'GET', data = null) => {

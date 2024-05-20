@@ -2,11 +2,13 @@ import React, { useState } from 'react'
 import useFetchAllCategories from '../../CommonFunction/useFetchAllCategories'
 import Swal from 'sweetalert2';
 import { callApi } from '../../Axios';
+import { currentDate } from '../../CommonFunction/common';
 
 export default function SupplyMaterial() {
     let catgeories = useFetchAllCategories()
     console.log(catgeories)
      const [supplyData, setSupplyData] = useState({
+    userId:localStorage.getItem('userId'),
     supplyDate: '',
     category: '',
     weight: '',
@@ -58,6 +60,7 @@ export default function SupplyMaterial() {
             className="form-control"
             id="supplyDate"
             name="supplyDate"
+             min={currentDate}
             value={supplyData.supplyDate}
             onChange={handleChange}
             required
